@@ -1,0 +1,26 @@
+{
+  "_comment": "Configuration for selecting, importing, solving, and submitting a LeetCode dataset.",
+  "_fields": {
+    "dataset": "Dataset name used to group imported problems, generated solutions, and results.",
+    "data_dir": "Base directory where named datasets are stored.",
+    "start_id": "First LeetCode problem number to include.",
+    "end_id": "Last LeetCode problem number to include.",
+    "difficulties": "Optional difficulty filter. Use [], or values like [\"Easy\"], [\"Medium\"], [\"Hard\"].",
+    "exclude_paid": "If true, paid-only LeetCode problems are skipped.",
+    "limit": "Maximum number of problems to import from the selected range. Use null for no explicit limit.",
+    "languages": "LeetCode language slugs used for imported templates, generated solutions, and submissions.",
+    "model": "OpenAI model used by submit-dataset to generate solutions.",
+    "submission_delay": "Seconds to wait between LeetCode submissions."
+  },
+
+  "dataset": "leetcode_new",
+  "data_dir": "datasets",
+  "start_id": 1840,
+  "end_id": 4000,
+  "difficulties": ["Medium"],
+  "exclude_paid": true,
+  "limit": 1,
+  "languages": ["java"],
+  "model": "gpt-5.2",
+  "submission_delay": 10
+}

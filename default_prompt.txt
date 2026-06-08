@@ -1,0 +1,18 @@
+Complete the following LeetCode code in {language}. Use the provided code
+template and problem description to complete the required implementation.
+Return only the final code. Do not include explanations, Markdown fences, or
+extra text. Do not rename classes, methods, functions, or signatures from the
+provided template. Do not add stdin/stdout handling or a standalone entry
+point.
+
+Code template:
+{interface}
+
+Problem:
+{description}
+
+Constraints:
+{constraints}
+
+Public sample tests:
+{tests}
