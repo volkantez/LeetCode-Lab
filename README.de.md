@@ -8,6 +8,9 @@ Automatische Daten-Pipeline zur Code-Evaluierung von LLMs für LeetCode.
 
 Dieses Projekt importiert ausgewählte LeetCode-Aufgaben über die LeetCode-GraphQL-Schnittstelle. Anschließend werden mithilfe der OpenAI API automatisch Lösungen in den konfigurierten Programmiersprachen generiert und an LeetCode eingereicht. Die offiziellen Submission-Ergebnisse werden gespeichert, sodass die Leistung des verwendeten Modells in einem strukturierten, datensatzbasierten Workflow nachvollziehbar ausgewertet werden kann.
 
+Es wurde ursprünglich als mein Bachelorprojekt für das Wintersemester 2025/26
+entwickelt und später in bereinigter Form öffentlich hochgeladen.
+
 ## Funktionen
 
 - LeetCode-Aufgaben anhand einer Konfiguration auswählen und importieren.
@@ -76,7 +79,11 @@ In der Praxis sollten für unterschiedliche Modelle, Prompts oder
 Experimentkonfigurationen getrennte Datensätze verwendet werden.
 
 ```bash
+# macOS / Linux
 python3 -m src.cli import.dataset
+
+# Windows
+py -3 -m src.cli import.dataset
 ```
 
 Der Datensatzname wird über `dataset` festgelegt. Die Sprachen werden über
@@ -104,7 +111,11 @@ Sprache aus `languages` nacheinander mit der OpenAI API gelöst und anschließen
 an LeetCode eingereicht:
 
 ```bash
+# macOS / Linux
 python3 -m src.cli submit.dataset
+
+# Windows
+py -3 -m src.cli submit.dataset
 ```
 Die generierten Lösungen werden pro Datensatz und Sprache gespeichert:
 
@@ -140,12 +151,6 @@ Wenn die Cookies ablaufen, müssen die Werte in `.env` mit neuen
 `LEETCODE_SESSION`- und `CSRF_TOKEN`-Werten aus dem Browser aktualisiert
 werden.
 
-
-## Kontext der Bachelorarbeit
-
-Die Bachelorarbeit evaluierte modellgenerierten Code über Online-Submissions auf
-LeetCode und erfasste Acceptance, Fehlerkategorien, Laufzeit und Speicher. 
-Diese öffentliche Version macht den Workflow über eine feste Konfiguration und zwei CLI-Befehle leichter wiederholbar.
 
 ## Lizenz
 

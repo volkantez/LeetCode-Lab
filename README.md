@@ -12,6 +12,9 @@ programming languages and submit them to LeetCode. The official submission
 results are stored so the selected model can be evaluated in a structured,
 dataset-based workflow.
 
+It was originally developed as my bachelor project for the winter semester
+2025/26 and was uploaded later in a cleaned-up public form.
+
 ## Features
 
 - Select and import LeetCode problems from a configuration file.
@@ -77,7 +80,11 @@ In practice, separate datasets should be used for different models, prompts, or
 experiment configurations.
 
 ```bash
+# macOS / Linux
 python3 -m src.cli import.dataset
+
+# Windows
+py -3 -m src.cli import.dataset
 ```
 
 The dataset name is configured through `dataset`. Languages are configured
@@ -103,7 +110,11 @@ All imported problems from the configured `dataset` are solved and submitted
 for each language listed in `languages`:
 
 ```bash
+# macOS / Linux
 python3 -m src.cli submit.dataset
+
+# Windows
+py -3 -m src.cli submit.dataset
 ```
 
 Generated solutions are stored per dataset and language:
@@ -142,13 +153,6 @@ LeetCode endpoints. It can fail if the session expires, LeetCode changes its
 endpoints, Cloudflare blocks the request, or LeetCode rate-limits submissions.
 If the cookies expire, the values in `.env` must be updated with fresh
 `LEETCODE_SESSION` and `CSRF_TOKEN` values from the browser.
-
-## Thesis Context
-
-The bachelor thesis evaluated model-generated code through online LeetCode
-submissions and recorded acceptance, error categories, runtime, and memory. This
-public version keeps the workflow easier to repeat through a fixed
-configuration and two CLI commands.
 
 ## License
 
